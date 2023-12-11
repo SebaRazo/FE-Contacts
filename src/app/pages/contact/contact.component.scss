@@ -1,0 +1,18 @@
+@use "../../../assets/styles/variables.scss";
+@use "../../../assets/styles/styles-c.scss";
+
+header {
+  margin: auto;
+  display: flexbox;
+  position: relative;
+  text-align: center;
+  font-family: cursive;
+  font-style: italic;
+  font-size: 50px;
+  font-weight: 900;
+
+  color: #ffffff;
+}
+div {
+  position: relative;
+}

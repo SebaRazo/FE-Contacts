@@ -1,0 +1,29 @@
+<div id="conteiner">
+  <div id="grupo2">
+    <p id="name">{{ contacto.name }}</p>
+    <p id="name">{{ contacto.description }}</p>
+    <span id="telephoneNumber"
+      >{{ contacto.celularNumber }} {{ contacto.telephoneNumber }}</span
+    >
+    <div>
+      <a
+        href="https://wa.me/{{ contacto.celularNumber }}"
+        target="_blank"
+        id="right"
+        ><img id="wp" src="./../../../../assets/icons/whatsapp.png"
+      /></a>
+      <a href="tel:{{ contacto.celularNumber }}" id="right"
+        ><img id="wp" src="./../../../../assets/icons/llamada-telefonica.png"
+      /></a>
+      <!--<a (click)="blockContact()" id="right"
+          ><img id="wp" src="./../../../../assets/icons/bloquear-usuario.png"
+        /></a>
+        <a (click)="deleteContacto()" id="right"
+          ><img id="wp" src="./../../../../assets/icons/eliminar-usuario.png"
+        /></a>
+        <a (click)="navigateToEditContact(contact.id)" id="right">
+          <img id="wp" src="./../../../../assets/icons/edit.png" />
+        </a>-->
+    </div>
+  </div>
+</div>

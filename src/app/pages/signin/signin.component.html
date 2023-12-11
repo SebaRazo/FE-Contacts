@@ -1,1 +1,52 @@
-<p>signin works!</p>
+<div class="signin" id="container">
+  <h2 id="registrate">Registrate</h2>
+  <form>
+    <label class="label" for="name" autocomplete="name">Nombre</label>
+    <input
+      class="input"
+      type="text"
+      id="name"
+      name="name"
+      placeholder=""
+      required
+    />
+    <p class="error">Debes ingresar tu nombre</p>
+
+    <label class="label" for="lastname" autocomplete="lastname">Apellido</label>
+    <input
+      class="input"
+      type="text"
+      id="lastname"
+      name="lastname"
+      placeholder=""
+      required
+    />
+    <p class="error">Debes ingresar tu apellido</p>
+
+    <label class="label" for="email" autocomplete="email">Email</label>
+    <input
+      class="input"
+      type="email"
+      id="email"
+      name="email"
+      placeholder=""
+      required
+    />
+    <p class="error">VERIFICAR EMAIL</p>
+
+    <label class="label" for="password" autocomplete="password"
+      >Contraseña</label
+    >
+    <input
+      class="input"
+      type="password"
+      id="password"
+      name="password"
+      placeholder=""
+      required
+    />
+    <p>VERIFICAR CONTRASEÑA</p>
+
+    <button class="button" [routerLink]="['/login']">Registrarse</button>
+  </form>
+</div>

@@ -1,3 +1,6 @@
+//@use "../../../assets/styles/variables.scss";
+//@use "../../../assets/styles/styles-c.scss";
+
 @use "../../../assets/styles/variables.scss";
 
 .container {
@@ -6,14 +9,32 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: grey; // Puedes definir el color de fondo en tus variables
+  padding: 2rem;
+  border-radius: 8px; // Bordes redondeados para un aspecto más moderno
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra para dar profundidad
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: white; // Puedes definir el color de texto principal en tus variables
 }
 
 button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: black; // Puedes definir el color principal en tus variables
+  color: #fff; // Texto blanco para contrastar
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; // Efecto de transición suave
+
+  &:hover {
+    background-color: darken(
+      variables.$color-principal,
+      10%
+    ); // Oscurece el color al pasar el ratón
+  }
 }

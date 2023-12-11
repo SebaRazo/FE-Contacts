@@ -4,13 +4,67 @@ header {
   background-color: variables.$color-principal;
   border-radius: 0 0 10px 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
-h1 {
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-height: 50px;
+  margin-left: 0px; /* Mueve el logo hacia la derecha */
+}
+
+a {
   color: white;
+  font-size: 20px;
+  text-decoration: none;
+  order: 1; /* Cambia el orden para que aparezca a la derecha */
+}
+
+.h1 {
+  color: rgb(0, 0, 0);
   font-size: 50px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  order: 0; /* Establece el orden original */
 }
+
+.logout-button {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  order: 1;
+
+  &:hover {
+    background-color: darken(variables.$color-principal, 10%);
+  }
+}
+/*
+button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: black; // Puedes definir el color principal en tus variables
+  color: #fff; // Texto blanco para contrastar
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; // Efecto de transición suave
+
+  &:hover {
+    background-color: darken(
+      variables.$color-principal,
+      10%
+    ); // Oscurece el color al pasar el ratón
+  }
+}*/

@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { HeaderService } from 'src/app/services/header.service';
+import { NgForm } from '@angular/forms';
+import { HeaderService } from 'src/app/core/services/header.service';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,23 @@ import { HeaderService } from 'src/app/services/header.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  constructor() //private auth: AuthService, private router: Router
+  {}
+
   headerService = inject(HeaderService);
+  form: any;
   ngOnInit(): void {
     this.headerService.titulo = 'Login';
   }
+  /*
+  authData: iAuthRequest = {
+    userName: '',
+    password: '',
+  };
+
+  async login(form: NgForm) {
+    console.log(form.value);
+    const token = await this.auth.login(form.value);
+    if (token) this.router.navigate(['contacts']);
+  }*/
 }

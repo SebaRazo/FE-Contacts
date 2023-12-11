@@ -1,1 +1,33 @@
-<p>contact works!</p>
+<div>
+  <h1>Contactos</h1>
+  <button [routerLink]="'/add-edit-contact'">
+    AGREGAR CONTACTO
+    <img src="./../../../assets/img/add-contact.png" alt="Agregar contacto" />
+  </button>
+
+  <button [routerLink]="'/edit-contact'">
+    EDITAR CONTACTO
+    <img src="./../../../assets/img/edit-c.png" alt="Editar Contacto" />
+  </button>
+
+  <button routerLink="">
+    LISTA NEGRA
+    <img src="./../../../assets/img/person-block.png" alt="Lista negra" />
+  </button>
+
+  <button [routerLink]="''">
+    SALIR
+    <img src="./../../../assets/img/home.png" alt="salir" />
+  </button>
+
+  <main id="container">
+    <div id="contact-container">
+      <!--
+      <app-contact-card
+        *ngFor="let contact of contactsData"
+        [contact]="contact"
+      >
+      </app-contact-card>-->
+    </div>
+  </main>
+</div>
