@@ -1,23 +1,51 @@
 <div class="add" id="container">
   <h1>NO SE RENDERIZA NADA</h1>
-  <form action="">
+  <form (ngSubmit)="AgregContactos(createForm)" #createForm="ngForm">
     <div>
       <h1>NUEVO CONTACTO</h1>
       <div>
-        <input type="text" name="name" id="" required />
         <label for="">Nombre</label>
+        <input
+          type="text"
+          name="name"
+          id=""
+          required
+          [(ngModel)]="contactsData.name"
+          #name="ngModel"
+        />
       </div>
       <div>
-        <input type="text" name="description" id="" required />
         <label for="">Descripcion</label>
+        <input
+          type="text"
+          name="description"
+          id=""
+          required
+          [(ngModel)]="contactsData.description"
+          #Description="ngModel"
+        />
       </div>
       <div>
-        <input type="text" name="celularNumber" id="" required />
         <label for="">Celular</label>
+        <input
+          type="text"
+          name="celularNumber"
+          id=""
+          required
+          [(ngModel)]="contactsData.celularNumber"
+          #celularNumber="ngModel"
+        />
       </div>
       <div>
-        <input type="text" name="telephoneNumber" id="" required />
         <label for="">Telefono fijo</label>
+        <input
+          type="text"
+          name="telephoneNumber"
+          id=""
+          required
+          [(ngModel)]="contactsData.telephoneNumber"
+          #telephoneNumber="ngModel"
+        />
       </div>
 
       <button type="submit">Agregar Contacto</button>

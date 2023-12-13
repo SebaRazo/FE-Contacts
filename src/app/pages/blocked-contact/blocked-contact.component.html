@@ -4,6 +4,8 @@
     <h1>Lista negra</h1>
   </header>
   <main id="container">
-    <app-blocked-card> </app-blocked-card>
+    <app-blocked-card>
+      *ngFor="let contact of contactsData" [contact]="contact"
+    </app-blocked-card>
   </main>
 </body>

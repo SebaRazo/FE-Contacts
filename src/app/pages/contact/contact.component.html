@@ -10,7 +10,7 @@
     <img src="./../../../assets/img/edit-c.png" alt="Editar Contacto" />
   </button>
 
-  <button routerLink="">
+  <button [routerLink]="'/blocked-contact'">
     LISTA NEGRA
     <img src="./../../../assets/img/person-block.png" alt="Lista negra" />
   </button>
@@ -22,12 +22,11 @@
 
   <main id="container">
     <div id="contact-container">
-      <!--
       <app-contact-card
         *ngFor="let contact of contactsData"
         [contact]="contact"
       >
-      </app-contact-card>-->
+      </app-contact-card>
     </div>
   </main>
 </div>

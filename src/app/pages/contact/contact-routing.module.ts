@@ -5,17 +5,17 @@ import { ContactComponent } from './contact.component';
 
 const routes: Routes = [
   {
-    path: 'contact',
+    path: '',
     component: ContactComponent,
   },
-  {
+  /*{
     path: 'add-edit-contact',
     component: AddEditContactComponent,
   },
   {
     path: 'edit-contact',
     component: AddEditContactComponent,
-  },
+  },*/
 ];
 
 @NgModule({

@@ -1,6 +1,9 @@
 <div class="signin" id="container">
   <h2 id="registrate">Registrate</h2>
-  <form>
+  <form
+    #registerForm="ngForm"
+    (ngSubmit)="registerForm.form.valid && register(registerForm)"
+  >
     <label class="label" for="name" autocomplete="name">Nombre</label>
     <input
       class="input"
@@ -9,6 +12,8 @@
       name="name"
       placeholder=""
       required
+      [(ngModel)]="user.name"
+      #name="ngModel"
     />
     <p class="error">Debes ingresar tu nombre</p>
 
@@ -20,7 +25,7 @@
       name="lastname"
       placeholder=""
       required
-    />
+    /><span class="barra"></span>
     <p class="error">Debes ingresar tu apellido</p>
 
     <label class="label" for="email" autocomplete="email">Email</label>
@@ -31,7 +36,9 @@
       name="email"
       placeholder=""
       required
-    />
+      [(ngModel)]="user.lastName"
+      #lastName="ngModel"
+    /><span class="barra"></span>
     <p class="error">VERIFICAR EMAIL</p>
 
     <label class="label" for="password" autocomplete="password"
@@ -44,9 +51,14 @@
       name="password"
       placeholder=""
       required
-    />
+      [(ngModel)]="user.password"
+      #password="ngModel"
+    /><span class="barra"></span>
     <p>VERIFICAR CONTRASEÑA</p>
+    <!--agregar email y username y separar en divs-->
 
-    <button class="button" [routerLink]="['/login']">Registrarse</button>
+    <button type="submit" class="button" [routerLink]="['/login']">
+      Registrarse
+    </button>
   </form>
 </div>

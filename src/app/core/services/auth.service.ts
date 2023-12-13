@@ -1,7 +1,8 @@
-/*import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BACKEND_URL } from '../../constants/backend';
 import { iAuthRequest } from '../interfaces/auth';
 import { ISession } from '../interfaces/session.interface';
+import { IUser } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +24,18 @@ export class AuthService {
     if (!token) return false;
     this.setSession(token);
     return true;
+  }
+  async addUser(user: IUser) {
+    const res = await fetch(BACKEND_URL + '/api/User', {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify(user),
+    }).then();
+    console.log(res);
+  }
+
+  setUserId(id: string) {
+    localStorage.setItem('Id', id);
   }
 
   isLoggedIn() {
@@ -65,4 +78,3 @@ export class AuthService {
     window.location.reload();
   }
 }
-*/

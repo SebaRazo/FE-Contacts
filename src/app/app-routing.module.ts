@@ -36,6 +36,13 @@ const routes: Routes = [
         (m) => m.EditContactModule
       ),
   },
+  {
+    path: 'blocked-contact',
+    loadChildren: () =>
+      import('./pages/blocked-contact/blocked-contact.module').then(
+        (m) => m.BlockedContactModule
+      ),
+  },
 ];
 
 @NgModule({

@@ -11,6 +11,7 @@ import { ContactCardComponent } from './components/contact-card/contact-card.com
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlockedContactComponent } from './pages/blocked-contact/blocked-contact.component';
 import { PopUpComponent } from './components/pop-up/pop-up.component';
+import { SigninComponent } from './pages/signin/signin.component';
 
 @NgModule({
   declarations: [

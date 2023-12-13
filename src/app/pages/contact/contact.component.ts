@@ -1,5 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ContactJsonPlaceholder } from 'src/app/core/interfaces/contacto';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { ContactoService } from 'src/app/core/services/contacto.service';
 import { HeaderService } from 'src/app/core/services/header.service';
 
 @Component({
@@ -10,13 +13,11 @@ import { HeaderService } from 'src/app/core/services/header.service';
 export class ContactComponent implements OnInit {
   contactsData: ContactJsonPlaceholder[] = [];
 
-  constructor() //private cs: ContactService,
-  //private router: Router,
-  //private auth: AuthService
-  {}
-  /*ngOnInit(): void {
-    this.getData();
-  }
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    private cs: ContactoService
+  ) {}
 
   async getData() {
     this.contactsData = await this.cs.getContacts();
@@ -32,10 +33,11 @@ export class ContactComponent implements OnInit {
 
   reload() {
     this.getData();
-  }*/
+  }
 
   headerService = inject(HeaderService);
   ngOnInit(): void {
     this.headerService.titulo = 'Contactos';
+    this.getData();
   }
 }

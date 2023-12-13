@@ -5,12 +5,8 @@ import { AddEditContactComponent } from './add-edit-contact.component';
 
 const routes: Routes = [
   {
-    path: 'add-edit-contact',
+    path: '',
     component: AddEditContactComponent,
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
   },
 ];
 

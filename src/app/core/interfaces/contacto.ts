@@ -1,5 +1,5 @@
 export interface Contacto {
-  id?: number; //opcional, lo crea el back
+  id: number; //opcional, lo crea el back
   name: string;
   description?: string;
   //firstName: string;
@@ -13,7 +13,7 @@ export interface Contacto {
 
 export interface ContactJsonPlaceholder {
   id?: number;
-  name: string;
+  name?: string;
   celularNumber?: number;
   telephoneNumber?: number;
   description?: string;

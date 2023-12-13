@@ -6,17 +6,17 @@ import { LoginComponent } from './login.component';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
   },
-  {
+  /*{
     path: 'signin',
     component: SigninComponent,
   },
   {
     path: 'contact',
     component: ContactComponent,
-  },
+  },*/
 ];
 
 @NgModule({

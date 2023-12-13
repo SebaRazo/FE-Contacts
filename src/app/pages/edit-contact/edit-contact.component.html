@@ -1,10 +1,14 @@
-<form action="">
+<form>
   <div class="form">
     <h1>Editar Contacto</h1>
     <div class="">
-      <input type="text" name="name" id="name" />
-      ><span class="barra"></span>
-      <label for="name">Nombre:</label>
+      <input
+        value="{{ contact.name }}"
+        type="text"
+        name="name"
+        id="name"
+        required
+      /><span class="barra"></span>
     </div>
     <div class="grupo">
       <input type="text" name="description" id="description" />

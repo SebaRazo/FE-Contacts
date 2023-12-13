@@ -1,8 +1,8 @@
 <div class="container">
   <div class="card">
     <div class="form-container">
-      <h2>---Login---</h2>
-      <form>
+      <h2>---LogIn---</h2>
+      <form (ngSubmit)="login(form)" #form="ngForm">
         <div class="form-group">
           <label for="user" class="">UserName:</label>
           <input
@@ -12,6 +12,8 @@
             placeholder="Usuario"
             autocomplete="username"
             required
+            [(ngModel)]="authData.userName"
+            #userName="ngModel"
           />
           <p class="error">Campo requerido</p>
         </div>
@@ -23,13 +25,17 @@
             name="password"
             placeholder="Contraseña"
             required
+            [(ngModel)]="authData.password"
+            #password="ngModel"
           />
           <p class="error">
             La contraseña tiene que tener un mínimo de 8 caracteres
           </p>
         </div>
-        <button class="login-btn" [routerLink]="['contact']">Log In</button>
-        <button id="signin" [routerLink]="['signin']">Sign In</button>
+        <button type="submit" class="login-btn" [routerLink]="['/contact']">
+          Log In
+        </button>
+        <button id="signin" [routerLink]="['/signin']">Sign In</button>
       </form>
     </div>
   </div>

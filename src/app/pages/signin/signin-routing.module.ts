@@ -5,14 +5,14 @@ import { SigninComponent } from './signin.component';
 
 const routes: Routes = [
   {
-    path: 'signin',
+    path: '',
     component: SigninComponent,
   },
 
-  {
+  /*{
     path: 'login',
     component: LoginComponent,
-  },
+  },*/
 ];
 
 @NgModule({

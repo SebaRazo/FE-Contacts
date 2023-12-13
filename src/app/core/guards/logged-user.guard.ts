@@ -1,4 +1,4 @@
-/*import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -29,4 +29,4 @@ export class LoggedUserGuard implements CanActivate {
     this.router.navigate(['/login']);
     return false;
   }
-}*/
+}

@@ -1,4 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { iRegisterRequest } from 'src/app/core/interfaces/auth';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { HeaderService } from 'src/app/core/services/header.service';
 
 @Component({
@@ -7,12 +11,24 @@ import { HeaderService } from 'src/app/core/services/header.service';
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
-  register() {
+  constructor(private router: Router, private auth: AuthService) {}
+
+  user: iRegisterRequest = {
+    name: '',
+    lastName: '',
+    password: '',
+    email: '',
+    userName: '',
+  };
+
+  async register(registerForm: NgForm) {
+    //completar
+    console.log(registerForm.value);
+    const res = await this.auth.addUser(registerForm.value);
+    this.router.navigate(['/']);
     throw new Error('Method not implemented.');
   }
   headerService = inject(HeaderService);
-  user: any;
-  form: any;
   ngOnInit(): void {
     this.headerService.titulo = 'SignIn';
   }
