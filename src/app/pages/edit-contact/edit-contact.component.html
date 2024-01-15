@@ -2,6 +2,7 @@
   <div class="form">
     <h1>Editar Contacto</h1>
     <div class="">
+      <label>Nombre</label>
       <input
         value="{{ contact.name }}"
         type="text"
@@ -11,22 +12,22 @@
       /><span class="barra"></span>
     </div>
     <div class="grupo">
+      <label>Descripcion:</label>
       <input type="text" name="description" id="description" />
       <span class="barra"></span>
-      <label>Descripcion:</label>
     </div>
   </div>
   <div class="">
+    <label>Numero de celular:</label>
     <input type="number" name="celularNumber" id="celularNumber" /><span
       class="barra"
     ></span>
-    <label>Numero de celular:</label>
   </div>
   <div class="">
+    <label>Numero de telefono:</label>
     <input type="number" name="telephoneNumber" id="telephoneNumber" /><span
       class="barra"
     ></span>
-    <label>Numero de telefono:</label>
   </div>
   <button type="submit">Editar</button>
   <button [routerLink]="['/contact']">Cancelar</button>

@@ -1,8 +1,45 @@
 @use "../../../assets/styles/variables.scss";
-header {
-  height: 100px;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+#header {
+  display: flex;
   background-color: variables.$color-principal;
-  border-radius: 0 0 10px 10px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 20px 20px;
+}
+.h1 {
+  font-family: "Roboto", sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  font-weight: 700;
+  //margin-bottom: 30px;
+}
+
+.logout-button {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  //order: 3;
+
+  &:hover {
+    background-color: darken(variables.$color-principal, 10%);
+  }
+}
+
+/*#headerP {
+  display: flex;
+}
+header {
+  min-height: 100px;
+  background-color: variables.$color-principal;
+  border-radius: 0 0 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,22 +54,24 @@ header {
 
 .logo {
   max-height: 50px;
-  margin-left: 0px; /* Mueve el logo hacia la derecha */
+  margin-left: 0px;
 }
 
 a {
   color: white;
   font-size: 20px;
   text-decoration: none;
-  order: 1; /* Cambia el orden para que aparezca a la derecha */
+  order: 2;
 }
 
 .h1 {
+  font-family: "Roboto", sans-serif;
   color: rgb(0, 0, 0);
   font-size: 50px;
   font-weight: 700;
   margin-bottom: 30px;
-  order: 0; /* Establece el orden original */
+  order: 0;
+  //flex-grow: 1;
 }
 
 .logout-button {
@@ -44,7 +83,7 @@ a {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  order: 1;
+  order: 3;
 
   &:hover {
     background-color: darken(variables.$color-principal, 10%);

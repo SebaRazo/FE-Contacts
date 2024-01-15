@@ -21,7 +21,7 @@ export class ContactoService {
     return contact;
   }
 
-  async getContacts(): Promise<Contacto[]> {
+  async getContacts(): Promise<ContactJsonPlaceholder[]> {
     const data = await fetch(BACKEND_URL + '/api/Contact/all', {
       method: 'GET',
       headers: {
@@ -33,7 +33,7 @@ export class ContactoService {
   }
 
   async getBlockedContacts(): Promise<Contacto[]> {
-    const data = await fetch(BACKEND_URL + '/api/Contact/blocked', {
+    const data = await fetch(BACKEND_URL + '/api/contact/blocked', {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',

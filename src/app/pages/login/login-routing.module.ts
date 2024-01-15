@@ -9,14 +9,6 @@ const routes: Routes = [
     path: '',
     component: LoginComponent,
   },
-  /*{
-    path: 'signin',
-    component: SigninComponent,
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
-  },*/
 ];
 
 @NgModule({
