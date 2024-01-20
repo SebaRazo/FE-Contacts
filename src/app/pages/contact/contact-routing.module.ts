@@ -8,14 +8,6 @@ const routes: Routes = [
     path: '',
     component: ContactComponent,
   },
-  /*{
-    path: 'add-edit-contact',
-    component: AddEditContactComponent,
-  },
-  {
-    path: 'edit-contact',
-    component: AddEditContactComponent,
-  },*/
 ];
 
 @NgModule({

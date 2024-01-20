@@ -12,6 +12,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { BlockedContactComponent } from './pages/blocked-contact/blocked-contact.component';
 import { PopUpComponent } from './components/pop-up/pop-up.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { LoggedUserGuard } from './core/guards/logged-user.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,9 @@ import { SigninComponent } from './pages/signin/signin.component';
     BlockedCardComponent,
     BlockedContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
 
-  providers: [],
+  providers: [LoggedUserGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

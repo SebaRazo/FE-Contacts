@@ -33,7 +33,7 @@ export class ContactoService {
   }
 
   async getBlockedContacts(): Promise<Contacto[]> {
-    const data = await fetch(BACKEND_URL + '/api/contact/blocked', {
+    const data = await fetch(BACKEND_URL + '/api/Contact/blocked', {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',

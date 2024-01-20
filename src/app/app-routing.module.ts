@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { LoggedUserGuard } from './core/guards/logged-user.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +23,7 @@ const routes: Routes = [
     path: 'contact',
     loadChildren: () =>
       import('./pages/contact/contact.module').then((m) => m.ContactModule),
+    canActivate: [LoggedUserGuard],
   },
   {
     path: 'add-edit-contact',
@@ -28,6 +31,7 @@ const routes: Routes = [
       import('./pages/add-edit-contact/add-edit-contact.module').then(
         (m) => m.AddEditContactModule
       ),
+    canActivate: [LoggedUserGuard],
   },
   {
     path: 'edit-contact',
@@ -35,6 +39,7 @@ const routes: Routes = [
       import('./pages/edit-contact/edit-contact.module').then(
         (m) => m.EditContactModule
       ),
+    canActivate: [LoggedUserGuard],
   },
   {
     path: 'blocked-contact',
@@ -42,6 +47,7 @@ const routes: Routes = [
       import('./pages/blocked-contact/blocked-contact.module').then(
         (m) => m.BlockedContactModule
       ),
+    canActivate: [LoggedUserGuard],
   },
 ];
 

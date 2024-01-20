@@ -6,33 +6,45 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  //height: 100vh;
+  min-height: 50vh;
   text-align: center;
-  margin-top: 10px;
+  //margin-top: 10px;
 }
 #buttons-container {
   display: flex;
-  justify-content: space-around; /* Ajusta según sea necesario */
-  margin-top: 20px; /* Ajusta según sea necesario */
+  flex-direction: column;
+  justify-content: space-around; /* Espaciado entre botones*/
+  margin-top: 20px; /*  */
+  gap: 10px;
+}
+h1 {
+  margin-top: 1px; /* Ajusta según sea necesario para acercar el h1 al header */
 }
 
 button {
   margin-top: 10px;
   padding: 10px 20px;
 }
-/*
-header {
-  margin: auto;
-  display: flexbox;
-  position: relative;
-  text-align: center;
-  font-family: cursive;
-  font-style: italic;
-  font-size: 50px;
-  font-weight: 900;
-
-  color: #ffffff;
+button span {
+  margin-right: 10px; /* Espaciado entre la descripción y la imagen */
 }
-div {
-  //position: relative;
-}*/
+button img {
+  width: 20px; /* Ajusta según sea necesario */
+  height: 20px; /* Ajusta según sea necesario */
+  margin-left: 10px;
+}
+
+#contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espaciado entre tarjetas de contacto */
+  margin-top: 20px; /* Ajusta según sea necesario */
+}
+.button-content {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Añadido para que el contenido ocupe el ancho completo del botón */
+  justify-content: center; /* Añadido para centrar el contenido */
+}

@@ -29,6 +29,8 @@
             placeholder="Contraseña"
             required
             [(ngModel)]="authData.password"
+            [required]="true"
+            [minlength]="8"
             #password="ngModel"
           />
           <p class="error" [class.show]="password.invalid && password.touched">

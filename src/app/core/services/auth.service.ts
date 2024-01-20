@@ -3,28 +3,61 @@ import { BACKEND_URL } from '../../constants/backend';
 import { iAuthRequest } from '../interfaces/auth';
 import { ISession } from '../interfaces/session.interface';
 import { IUser } from '../interfaces/user.interface';
+import { JwtHelperService } from '@auth0/angular-jwt'; //npm install @auth0/angular-jwt
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
-
   private loggedIn: boolean = false;
 
+  constructor(private http: HttpClient, private router: Router) {
+    this.loggedIn = !!localStorage.getItem('session'); //para que quede la sesión guardada
+  }
+
   async login(authentication: iAuthRequest): Promise<boolean> {
-    const res = await fetch(BACKEND_URL + '/api/authentication/authenticate', {
+    const res = await fetch('https://localhost:7229/api/User/authenticate', {
       method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(authentication),
     });
     if (!res.ok) return false;
-    const token = await res.text;
+    const token = await res.text();
+    console.log(token);
+
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(token);
+    const sub = decodedToken.sub;
+    console.log(sub);
+
+    if (!token) return false;
+    this.setSession(token);
+    this.setUserId(sub); //guarda el id en el local storage
+    return true;
+  }
+
+  /*async login(authentication: iAuthRequest): Promise<boolean> {
+    const res = await fetch(
+      'https://localhost:7229/api/Authentication/authenticate',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(authentication),
+      }
+    );
+    if (!res.ok) return false;
+    const token = await res.text();
     console.log(token);
     if (!token) return false;
     this.setSession(token);
     return true;
   }
+  */
   async addUser(user: IUser) {
     const res = await fetch(BACKEND_URL + '/api/User', {
       method: 'POST',
@@ -58,7 +91,7 @@ export class AuthService {
       expiresIn: new Date(date).toISOString(),
       token,
     };
-
+    this.loggedIn = true;
     localStorage.setItem('session', JSON.stringify(session));
     //window.location.reload();
   }
@@ -76,5 +109,10 @@ export class AuthService {
     localStorage.removeItem('session');
     this.loggedIn = false;
     window.location.reload();
+  }
+  //new
+  getUserId(): number | null {
+    const storedUserId = localStorage.getItem('Id');
+    return storedUserId ? +storedUserId : null;
   }
 }
