@@ -14,6 +14,7 @@ export class BlockedCardComponent implements OnInit {
     celularNumber: 0,
     description: '',
     telephoneNumber: 0,
+    call: [],
   };
 
   ngOnInit(): void {}

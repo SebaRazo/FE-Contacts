@@ -1,7 +1,12 @@
 <div id="header">
   <h1 class="h1">{{ headerService.titulo }}</h1>
 
-  <button class="logout-button" id="logout-button" [routerLink]="['']">
+  <button
+    class="logout-button"
+    id="logout-button"
+    [routerLink]="['']"
+    (click)="logout()"
+  >
     Logout
   </button>
 </div>

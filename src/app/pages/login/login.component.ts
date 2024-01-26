@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   form: any;
   ngOnInit(): void {
     this.headerService.titulo = 'Login';
+    localStorage.removeItem('session');
   }
 
   authData: iAuthRequest = {
@@ -27,6 +28,6 @@ export class LoginComponent implements OnInit {
   async login(form: NgForm) {
     console.log(form.value);
     const token = await this.auth.login(form.value);
-    if (token) this.router.navigate(['/contact']); //contacts
+    if (token) this.router.navigate(['/contact']); //si el token existe, redirige a la ruta /contact
   }
 }

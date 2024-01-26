@@ -21,6 +21,7 @@ export class ContactComponent implements OnInit {
 
   async getData() {
     this.contactsData = await this.cs.getContacts();
+    console.log(this.contactsData);
   }
 
   logOut() {

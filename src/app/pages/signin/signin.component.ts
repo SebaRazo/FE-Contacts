@@ -25,7 +25,10 @@ export class SigninComponent implements OnInit {
     //completar
     console.log(registerForm.value);
     const res = await this.auth.addUser(registerForm.value);
-    this.router.navigate(['/']);
+    if (res) {
+      this.router.navigate(['/login']);
+      return;
+    }
     throw new Error('Method not implemented.');
   }
   headerService = inject(HeaderService);

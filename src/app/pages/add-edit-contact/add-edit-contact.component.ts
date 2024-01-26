@@ -23,6 +23,7 @@ export class AddEditContactComponent implements OnInit {
     celularNumber: 0,
     description: '',
     telephoneNumber: 0,
+    call: [],
   };
   async AgregContactos(createForm: NgForm) {
     console.log(createForm.value);

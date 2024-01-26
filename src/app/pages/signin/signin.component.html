@@ -24,6 +24,7 @@
       id="lastname"
       name="lastname"
       placeholder=""
+      [(ngModel)]="user.lastName"
       required
     /><span class="barra"></span>
     <p class="error">Debes ingresar tu apellido</p>
@@ -36,11 +37,24 @@
       name="email"
       placeholder=""
       required
-      [(ngModel)]="user.lastName"
+      [(ngModel)]="user.email"
       #lastName="ngModel"
     /><span class="barra"></span>
     <p class="error">VERIFICAR EMAIL</p>
 
+    <label class="label" for="username" autocomplete="email"
+      >Nombre de usuario</label
+    >
+    <input
+      class="input"
+      type="text"
+      id="userName"
+      name="userName"
+      placeholder=""
+      required
+      [(ngModel)]="user.userName"
+    />
+    <p class="error">Debes ingresar un nombre de usuario</p>
     <label class="label" for="password" autocomplete="password"
       >Contraseña</label
     >
@@ -51,14 +65,12 @@
       name="password"
       placeholder=""
       required
+      [minlength]="8"
       [(ngModel)]="user.password"
       #password="ngModel"
     /><span class="barra"></span>
     <p>VERIFICAR CONTRASEÑA</p>
-    <!--agregar email y username y separar en divs-->
 
-    <button type="submit" class="button" [routerLink]="['/login']">
-      Registrarse
-    </button>
+    <button type="submit" class="button">Registrarse</button>
   </form>
 </div>

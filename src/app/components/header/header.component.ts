@@ -8,4 +8,8 @@ import { HeaderService } from 'src/app/core/services/header.service';
 })
 export class HeaderComponent {
   headerService = inject(HeaderService);
+
+  logout() {
+    localStorage.removeItem('session');
+  }
 }

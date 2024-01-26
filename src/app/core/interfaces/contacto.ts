@@ -12,6 +12,7 @@ export interface Contacto {
   user: any;
   userId: number;
   isBlocked: boolean;
+  call: any[];
 }
 
 export interface ContactJsonPlaceholder {
@@ -20,4 +21,5 @@ export interface ContactJsonPlaceholder {
   celularNumber?: number;
   telephoneNumber?: number;
   description?: string;
+  call: any[];
 }

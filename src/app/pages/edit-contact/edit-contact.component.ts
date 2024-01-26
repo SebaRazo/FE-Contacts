@@ -34,8 +34,10 @@ export class EditContactComponent implements OnInit {
     celularNumber: undefined,
     description: '',
     telephoneNumber: undefined,
+    call: [],
   };
   async updateContact(editForm: NgForm): Promise<void> {
+    console.log(editForm.value);
     if (editForm.errors !== null) return;
     if (this.id === undefined) return;
     const res = await this.contactoService.editContact(this.id, editForm.value);

@@ -15,6 +15,22 @@
       <a href="tel:{{ contacto.celularNumber }}" id="right"
         ><img id="wp" src="./../../../../assets/icons/llamada-telefonica.png"
       /></a>
+      <button (click)="blockContact()" id="right">
+        bloquear<img
+          id="wp"
+          src="./../../../../assets/icons/bloquear-usuario.png"
+        />
+      </button>
+      <button (click)="deleteContacto(contacto.id)" id="right">
+        borrar<img
+          id="wp"
+          src="./../../../../assets/icons/eliminar-usuario.png"
+        />
+      </button>
+      <button (click)="navigateToEditContact(contacto.id)" id="right">
+        editar
+        <img id="wp" src="./../../../../assets/icons/edit.png" />
+      </button>
       <!--<a (click)="blockContact()" id="right"
           ><img id="wp" src="./../../../../assets/icons/bloquear-usuario.png"
         /></a>

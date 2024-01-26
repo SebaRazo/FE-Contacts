@@ -58,13 +58,16 @@ export class AuthService {
     return true;
   }
   */
-  async addUser(user: IUser) {
+  async addUser(user: IUser): Promise<boolean> {
     const res = await fetch(BACKEND_URL + '/api/User', {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(user),
     }).then();
-    console.log(res);
+    //console.log(res);
+    if (!res.ok) return false;
+
+    return true;
   }
 
   setUserId(id: string) {

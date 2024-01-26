@@ -40,9 +40,10 @@ export class ContactoService {
         Authorization: `Bearer ${this.auth.getSession().token!}`,
       },
     });
+
     return await data.json();
   }
-  async editContact(id: number, contact: Partial<Contacto>): Promise<Contacto> {
+  async editContact(id: number, contact: Partial<Contacto>): Promise<boolean> {
     console.log('Contact in editContact:', contact);
     const res = await fetch(BACKEND_URL + '/api/Contact/' + id, {
       method: 'PUT',
@@ -52,7 +53,9 @@ export class ContactoService {
         Authorization: `Bearer ${this.auth.getSession().token!}`,
       },
     });
-    return await res.json();
+    if (!res.ok) return false;
+    return true;
+    //return await res.json();
   }
   async addContact(
     contact: ContactJsonPlaceholder
@@ -91,32 +94,3 @@ export class ContactoService {
     }
   }
 }
-
-/*
-  async getContactDetails(id: number): Promise<Contacto | undefined> {
-    let contactos = await this.getContactos();
-    return contactos.find((contacto) => contacto.id === id);
-  }
-
-  async getContactos(): Promise<Contacto[]> {
-    const contactosFalsos: Contacto[] = [
-      { id: 1, name: 'John Doe', celularNumber: 123456789 },
-      { id: 2, name: 'Jane Smith', celularNumber: 987654321 },
-    ];
-
-    let contactos: Contacto[] = [];
-    let contactosString = localStorage.getItem('contactos');
-
-    if (contactosString) {
-      // Utilizamos try-catch para manejar posibles errores al parsear JSON
-      try {
-        const contactosLocalStorage = JSON.parse(contactosString);
-        //contactos = JSON.parse(contactosString);
-        contactos = [...contactosFalsos, ...contactosLocalStorage];
-      } catch (error) {
-        contactos = contactosFalsos; //console.error('Error al parsear JSON:', error);
-      }
-    }
-
-    return contactos;
- */

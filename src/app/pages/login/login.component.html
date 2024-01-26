@@ -8,7 +8,7 @@
           <input
             type="text"
             id="user"
-            name="user"
+            name="userName"
             placeholder="Usuario"
             autocomplete="username"
             required
@@ -41,12 +41,18 @@
           <button
             type="submit"
             class="login-btn"
+            name="login-btn"
             [routerLink]="['/contact']"
             [disabled]="form.invalid"
           >
             Log In
           </button>
-          <button class="signin-btn" id="signin" [routerLink]="['/signin']">
+          <button
+            class="signin-btn"
+            id="signin"
+            name="signin"
+            [routerLink]="['/signin']"
+          >
             Sign In
           </button>
         </div>
