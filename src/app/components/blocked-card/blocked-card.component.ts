@@ -15,6 +15,7 @@ export class BlockedCardComponent implements OnInit {
     description: '',
     telephoneNumber: 0,
     call: [],
+    isBlocked: false,
   };
 
   ngOnInit(): void {}

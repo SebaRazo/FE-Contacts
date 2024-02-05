@@ -5,11 +5,6 @@ import { LoggedUserGuard } from './core/guards/logged-user.guard';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
-  },
-  {
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginModule),
@@ -48,6 +43,15 @@ const routes: Routes = [
         (m) => m.BlockedContactModule
       ),
     canActivate: [LoggedUserGuard],
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: '**',
+    redirectTo: '/',
   },
 ];
 

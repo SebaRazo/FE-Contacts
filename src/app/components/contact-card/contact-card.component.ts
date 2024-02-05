@@ -23,6 +23,7 @@ export class ContactCardComponent implements OnInit {
     celularNumber: 0,
     description: '',
     call: [],
+    isBlocked: false,
   };
   ngOnInit(): void {}
 }

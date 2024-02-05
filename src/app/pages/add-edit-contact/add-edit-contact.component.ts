@@ -24,6 +24,7 @@ export class AddEditContactComponent implements OnInit {
     description: '',
     telephoneNumber: 0,
     call: [],
+    isBlocked: false,
   };
   async AgregContactos(createForm: NgForm) {
     console.log(createForm.value);
@@ -33,6 +34,6 @@ export class AddEditContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.headerService.titulo = 'Agregar';
+    this.headerService.titulo = 'Add';
   }
 }

@@ -11,7 +11,7 @@ import { HeaderService } from 'src/app/core/services/header.service';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  contactsData: ContactJsonPlaceholder[] = [];
+  contactsData: ContactJsonPlaceholder[] = []; //Arreglo que contendrá datos de contactos obtenidos del servicio
 
   constructor(
     private router: Router,
@@ -38,7 +38,7 @@ export class ContactComponent implements OnInit {
 
   headerService = inject(HeaderService);
   ngOnInit(): void {
-    this.headerService.titulo = 'Contactos';
+    this.headerService.titulo = 'Your Contacts';
     this.getData();
   }
 }

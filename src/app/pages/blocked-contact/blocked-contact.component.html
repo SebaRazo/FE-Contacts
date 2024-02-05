@@ -1,11 +1,22 @@
-<body>
-  <header>
-    <a [routerLink]="['/contact']">BACK</a>
-    <h1>Lista negra</h1>
+<body class="body">
+  <header class="header">
+    <a [routerLink]="['/contact']" class="back">
+      <img
+        class="back"
+        src="./../../../assets/img/arrow-left-circle.png"
+        alt="back"
+    /></a>
   </header>
-  <main id="container">
-    <app-blocked-card>
-      *ngFor="let contact of contactsData" [contact]="contact"
-    </app-blocked-card>
+  <main id="container" class="main">
+    <div *ngIf="contactsData.length > 0" class="blocked-cards-container">
+      <app-blocked-card
+        *ngFor="let contact of contactsData"
+        [contact]="contact"
+        class="blocked-card"
+      />
+    </div>
+    <div *ngIf="contactsData.length == 0" class="no-blocked-contacts">
+      <h2>No tienes contactos bloqueados</h2>
+    </div>
   </main>
 </body>

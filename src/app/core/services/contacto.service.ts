@@ -26,7 +26,7 @@ export class ContactoService {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        Authorization: `Bearer ${this.auth.getSession().token!}`, ////******************* */
+        Authorization: `Bearer ${this.auth.getSession().token!}`,
       },
     });
     return await data.json();
@@ -43,6 +43,7 @@ export class ContactoService {
 
     return await data.json();
   }
+
   async editContact(id: number, contact: Partial<Contacto>): Promise<boolean> {
     console.log('Contact in editContact:', contact);
     const res = await fetch(BACKEND_URL + '/api/Contact/' + id, {
@@ -57,6 +58,7 @@ export class ContactoService {
     return true;
     //return await res.json();
   }
+
   async addContact(
     contact: ContactJsonPlaceholder
   ): Promise<ContactJsonPlaceholder> {
@@ -71,6 +73,7 @@ export class ContactoService {
     });
     return await res.json();
   }
+
   async deleteContact(id: number): Promise<boolean> {
     const res = await fetch(BACKEND_URL + '/api/Contact/' + id, {
       method: 'DELETE',
@@ -81,8 +84,8 @@ export class ContactoService {
     });
     return res.ok;
   }
-  //ver
-  async blockContact(id: number): Promise<void> {
+
+  async blockContact(id: number): Promise<boolean> {
     const res = await fetch(BACKEND_URL + '/api/Contact/block/' + id, {
       method: 'POST',
       headers: {
@@ -90,7 +93,17 @@ export class ContactoService {
         Authorization: `Bearer ${this.auth.getSession().token!}`,
       },
     });
-    if (!res.ok) {
-    }
+    return res.ok;
+  }
+
+  async unblockContact(id: number): Promise<boolean> {
+    const res = await fetch(BACKEND_URL + '/api/Contact/unblock/' + id, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${this.auth.getSession().token!}`,
+      },
+    });
+    return res.ok;
   }
 }

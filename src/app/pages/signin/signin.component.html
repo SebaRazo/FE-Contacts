@@ -10,12 +10,14 @@
       type="text"
       id="name"
       name="name"
-      placeholder=""
+      placeholder="Nombre"
       required
       [(ngModel)]="user.name"
       #name="ngModel"
-    />
-    <p class="error">Debes ingresar tu nombre</p>
+    /><span class="barra"></span>
+    <p class="error" [class.show]="name.invalid && name.touched">
+      Debes ingresar tu nombre
+    </p>
 
     <label class="label" for="lastname" autocomplete="lastname">Apellido</label>
     <input
@@ -23,11 +25,14 @@
       type="text"
       id="lastname"
       name="lastname"
-      placeholder=""
+      placeholder="Apellido"
       [(ngModel)]="user.lastName"
+      #lastName="ngModel"
       required
     /><span class="barra"></span>
-    <p class="error">Debes ingresar tu apellido</p>
+    <p class="error" [class.show]="lastName.invalid && lastName.touched">
+      Debes ingresar tu apellido
+    </p>
 
     <label class="label" for="email" autocomplete="email">Email</label>
     <input
@@ -35,12 +40,14 @@
       type="email"
       id="email"
       name="email"
-      placeholder=""
+      placeholder="Correo electrónico"
       required
       [(ngModel)]="user.email"
-      #lastName="ngModel"
+      #email="ngModel"
     /><span class="barra"></span>
-    <p class="error">VERIFICAR EMAIL</p>
+    <p class="error" [class.show]="email.invalid && email.touched">
+      Debes ingresar tu email
+    </p>
 
     <label class="label" for="username" autocomplete="email"
       >Nombre de usuario</label
@@ -50,11 +57,14 @@
       type="text"
       id="userName"
       name="userName"
-      placeholder=""
+      placeholder="Usuario"
       required
       [(ngModel)]="user.userName"
-    />
-    <p class="error">Debes ingresar un nombre de usuario</p>
+      #userName="ngModel"
+    /><span class="barra"></span>
+    <p class="error" [class.show]="userName.invalid && userName.touched">
+      Debes ingresar un nombre de usuario
+    </p>
     <label class="label" for="password" autocomplete="password"
       >Contraseña</label
     >
@@ -68,9 +78,11 @@
       [minlength]="8"
       [(ngModel)]="user.password"
       #password="ngModel"
+      [minlength]="8"
     /><span class="barra"></span>
-    <p>VERIFICAR CONTRASEÑA</p>
-
-    <button type="submit" class="button">Registrarse</button>
+    <p class="error" [class.show]="password.invalid && password.touched">
+      La contraseña debe tener un mínimo de 8 caracteres
+      <button type="submit" class="button">Registrarse</button>
+    </p>
   </form>
 </div>

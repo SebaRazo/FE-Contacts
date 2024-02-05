@@ -1,0 +1,51 @@
+.contact-card {
+  background-color: rgb(255, 250, 250);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  font-family: "Roboto", sans-serif;
+}
+:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact-description {
+  color: rgb(49, 49, 49);
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.contact-phone {
+  margin-top: 8px;
+  color: #333;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.backgroundBlocked {
+  background-color: #c2c8e4;
+}
+
+.action-link {
+  margin-right: 10px;
+  color: rgb(8, 8, 8);
+  position: relative;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="form-container">
-      <h1>---LogIn---</h1>
+      <h1>LogIn</h1>
       <form (ngSubmit)="login(form)" #form="ngForm">
         <div class="form-group">
           <label for="user" class="">UserName:</label>
@@ -42,7 +42,6 @@
             type="submit"
             class="login-btn"
             name="login-btn"
-            [routerLink]="['/contact']"
             [disabled]="form.invalid"
           >
             Log In
@@ -51,6 +50,7 @@
             class="signin-btn"
             id="signin"
             name="signin"
+            type="button"
             [routerLink]="['/signin']"
           >
             Sign In

@@ -14,17 +14,17 @@ import { PopUpComponent } from './components/pop-up/pop-up.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { LoggedUserGuard } from './core/guards/logged-user.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-
     ContactDetailsComponent,
     BlockedCardComponent,
     BlockedContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CommonModule],
 
   providers: [LoggedUserGuard],
   bootstrap: [AppComponent],

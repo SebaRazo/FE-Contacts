@@ -21,5 +21,12 @@ export interface ContactJsonPlaceholder {
   celularNumber?: number;
   telephoneNumber?: number;
   description?: string;
+  isBlocked: boolean;
   call: any[];
+  callInfo?: CallInfo;
+}
+
+class CallInfo {
+  countCall?: number;
+  timeCall?: Date;
 }

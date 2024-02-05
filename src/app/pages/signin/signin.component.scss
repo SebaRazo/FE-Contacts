@@ -4,12 +4,16 @@
 //@use "../../../assets/styles/styles-c.scss";
 .signin {
   max-width: 400px;
-  margin: 100px auto;
+  margin: 6px auto;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //flex-direction: column;
 }
 #registrate {
   font-family: "Roboto", sans-serif;
@@ -57,16 +61,16 @@
   padding: 12px 20px;
   border: none;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: variables.$color-principal;
   color: #fff;
 }
 
 .button:hover {
-  background-color: darken(#007bff, 10%);
+  background-color: darken(variables.$color-principal, 10%);
 }
 
 .button:active {
-  background-color: darken(#007bff, 20%);
+  background-color: darken(variables.$color-principal, 20%);
 }
 
 .button:focus {

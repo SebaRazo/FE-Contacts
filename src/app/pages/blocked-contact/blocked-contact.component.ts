@@ -21,12 +21,13 @@ export class BlockedContactComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.headerService.titulo = 'Blocked';
+    this.headerService.titulo = 'BlackList';
     this.getData();
   }
 
   async getData() {
     this.contactsData = await this.cs.getBlockedContacts();
+    console.log(this.contactsData);
   }
 
   logOut() {

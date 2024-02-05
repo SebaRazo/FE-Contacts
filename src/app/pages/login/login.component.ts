@@ -11,13 +11,21 @@ import { HeaderService } from 'src/app/core/services/header.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    private authService: AuthService
+  ) {}
 
   headerService = inject(HeaderService);
   form: any;
   ngOnInit(): void {
     this.headerService.titulo = 'Login';
-    localStorage.removeItem('session');
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/contact']);
+    } else {
+      localStorage.removeItem('session');
+    }
   }
 
   authData: iAuthRequest = {
@@ -26,6 +34,7 @@ export class LoginComponent implements OnInit {
   };
 
   async login(form: NgForm) {
+    localStorage.removeItem('session');
     console.log(form.value);
     const token = await this.auth.login(form.value);
     if (token) this.router.navigate(['/contact']); //si el token existe, redirige a la ruta /contact

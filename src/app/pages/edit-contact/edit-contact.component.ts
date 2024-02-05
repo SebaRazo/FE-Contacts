@@ -20,7 +20,7 @@ export class EditContactComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.headerService.titulo = 'Editar';
+    this.headerService.titulo = 'Edit';
     this.route.params.subscribe((params) => {
       this.id = +params['id'];
       this.contactoService
@@ -35,6 +35,7 @@ export class EditContactComponent implements OnInit {
     description: '',
     telephoneNumber: undefined,
     call: [],
+    isBlocked: false,
   };
   async updateContact(editForm: NgForm): Promise<void> {
     console.log(editForm.value);

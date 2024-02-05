@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  private loggedIn: boolean = false;
+  private loggedIn: boolean = !!localStorage.getItem('session');
 
   constructor(private http: HttpClient, private router: Router) {
-    this.loggedIn = !!localStorage.getItem('session'); //para que quede la sesión guardada
+    //this.loggedIn = !!localStorage.getItem('session'); //para que quede la sesión guardada
   }
 
   async login(authentication: iAuthRequest): Promise<boolean> {
@@ -75,7 +75,8 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return this.loggedIn;
+    return !!localStorage.getItem('session');
+    //return this.loggedIn;
   }
 
   getSession(): ISession {

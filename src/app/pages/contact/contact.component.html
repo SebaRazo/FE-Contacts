@@ -1,37 +1,23 @@
 <div id="page-container">
-  <h1>Contactos</h1>
-  <div id="buttons-container">
-    <button [routerLink]="'/add-edit-contact'">
-      <div class="button-content">
-        <span>AGREGAR CONTACTO</span>
-        <img
-          src="./../../../assets/img/add-contact.png"
-          alt="Agregar contacto"
-        />
-      </div>
-    </button>
-    <!--
-    <button [routerLink]="'/edit-contact'">
-      <div class="button-content">
-        <span>EDITAR CONTACTO</span>
-        <img src="./../../../assets/img/edit-c.png" alt="Editar Contacto" />
-      </div>
-    </button>-->
-
-    <button [routerLink]="'/blocked-contact'">
-      <div class="button-content">
-        <span>LISTA NEGRA</span>
-        <img src="./../../../assets/img/person-block.png" alt="Lista negra" />
-      </div>
-    </button>
-
-    <button [routerLink]="''">
-      <div class="button-content">
-        <span>SALIR</span>
-        <img src="./../../../assets/img/home.png" alt="salir" />
-      </div>
-    </button>
-  </div>
+  <header>
+    <div id="buttons-container">
+      <button [routerLink]="'/add-edit-contact'">
+        <div class="button-content">
+          <span>AGREGAR CONTACTO</span>
+          <img
+            src="./../../../assets/img/add-contact.png"
+            alt="Agregar contacto"
+          />
+        </div>
+      </button>
+      <button [routerLink]="'/blocked-contact'">
+        <div class="button-content">
+          <span>LISTA NEGRA</span>
+          <img src="./../../../assets/img/person-block.png" alt="Lista negra" />
+        </div>
+      </button>
+    </div>
+  </header>
   <main id="container">
     <div id="contact-container">
       <app-pop-up
@@ -39,11 +25,17 @@
         [contacto]="contact"
         (getData)="getData()"
       ></app-pop-up>
-
-      <!--<app-contact-card
-        *ngFor="let contact of contactsData"
-        [contact]="contact"
-      ></app-contact-card>-->
     </div>
   </main>
 </div>
+<!--<app-contact-card
+        *ngFor="let contact of contactsData"
+        [contact]="contact"
+      ></app-contact-card>-->
+
+<!--<button [routerLink]="''">
+        <div class="button-content">
+          <span>SALIR</span>
+          <img src="./../../../assets/img/home.png" alt="salir" />
+        </div>
+      </button>-->

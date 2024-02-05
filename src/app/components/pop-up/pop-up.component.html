@@ -1,37 +1,59 @@
-<div id="conteiner">
+<div
+  id="conteiner"
+  [ngClass]="{ backgroundBlocked: contacto.isBlocked }"
+  class="contact-card"
+>
   <div id="grupo2">
-    <p id="name">{{ contacto.name }}</p>
-    <p id="name">{{ contacto.description }}</p>
-    <span id="telephoneNumber"
+    <p id="name" class="contact-name">{{ contacto.name }}</p>
+    <p id="name" class="contact-description">{{ contacto.description }}</p>
+    <span id="telephoneNumber" class="contact-phone"
       >{{ contacto.celularNumber }} {{ contacto.telephoneNumber }}</span
     >
-    <div>
+    <div class="contact-actions">
       <a
         href="https://wa.me/{{ contacto.celularNumber }}"
         target="_blank"
         id="right"
-        ><img id="wp" src="./../../../../assets/icons/whatsapp.png"
+        title="Wsp"
+        class="action-link"
+        ><img id="wp" src="./../../../../assets/img/message-circle.png"
       /></a>
-      <a href="tel:{{ contacto.celularNumber }}" id="right"
-        ><img id="wp" src="./../../../../assets/icons/llamada-telefonica.png"
-      /></a>
-      <button (click)="blockContact()" id="right">
-        bloquear<img
-          id="wp"
-          src="./../../../../assets/icons/bloquear-usuario.png"
-        />
-      </button>
-      <button (click)="deleteContacto(contacto.id)" id="right">
-        borrar<img
-          id="wp"
-          src="./../../../../assets/icons/eliminar-usuario.png"
-        />
-      </button>
-      <button (click)="navigateToEditContact(contacto.id)" id="right">
-        editar
-        <img id="wp" src="./../../../../assets/icons/edit.png" />
-      </button>
-      <!--<a (click)="blockContact()" id="right"
+
+      <a
+        *ngIf="!contacto.isBlocked"
+        (click)="blockContact(contacto.id)"
+        id="right"
+        title="Bloquear"
+        class="action-link"
+        ><img id="wp" src="./../../../../assets/img/shield-alert.png" />
+      </a>
+
+      <a
+        *ngIf="contacto.isBlocked"
+        (click)="unblockContact(contacto.id)"
+        id="right"
+        title="Desbloquear"
+        class="action-link"
+        ><img id="wp" src="./../../../../assets/img/shield-check.png" />
+      </a>
+      <a
+        (click)="deleteContacto(contacto.id)"
+        id="right"
+        title="Eliminar"
+        class="action-link"
+        ><img id="wp" src="./../../../../assets/img/trash.png" />
+      </a>
+      <a
+        (click)="navigateToEditContact(contacto.id)"
+        id="right"
+        title="Editar"
+        class="action-link"
+        ><img id="wp" src="./../../../../assets/img/pencil.png" />
+      </a>
+    </div>
+  </div>
+</div>
+<!--<a (click)="blockContact()" id="right"
           ><img id="wp" src="./../../../../assets/icons/bloquear-usuario.png"
         /></a>
         <a (click)="deleteContacto()" id="right"
@@ -40,6 +62,29 @@
         <a (click)="navigateToEditContact(contact.id)" id="right">
           <img id="wp" src="./../../../../assets/icons/edit.png" />
         </a>-->
-    </div>
-  </div>
-</div>
+<!--
+   <a
+        *ngIf="!contacto.isBlocked"
+        (click)="blockContact(contacto.id)"
+        id="right"
+      >
+        bloquear<img id="wp" src="./../../../../assets/img/shield-alert.png" />
+      </a>
+      <a
+        *ngIf="contacto.isBlocked"
+        (click)="unblockContact(contacto.id)"
+        id="right"
+      >
+        desbloquear<img id="wp" src="./../../../../assets/img/.png" />
+      </a>
+      <a (click)="deleteContacto(contacto.id)" id="right">
+        borrar<img id="wp" src="./../../../../assets/img/trash.png" />
+      </a>
+      <a (click)="navigateToEditContact(contacto.id)" id="right">
+        editar
+        <img id="wp" src="./../../../../assets/img/pencil.png" />
+      </a>
+-->
+<!--<a href="tel:{{ contacto.celularNumber }}" id="right"
+        ><img id="wp" src="./../../../../assets/icons/llamada-telefonica.png"
+      /></a>-->

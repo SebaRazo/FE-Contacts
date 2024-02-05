@@ -1,9 +1,7 @@
-<div action="" id="conteiner">
-  <div id="form">
-    <div id="grupo">
-      <button id="button-emergente" class="btn btn-primary">
-        <p id="name">{{ contact.name }} {{ contact.description }}</p>
-      </button>
-    </div>
-  </div>
+<div action="" id="conteiner" class="card">
+  <p class="card-info">Nombre: {{ contact.name }}</p>
+  <p class="card-info">Descripcion: {{ contact.description }}</p>
+  <p class="card-info">Numero de llamadas: {{ contact.callInfo?.countCall }}</p>
 </div>
+<br />
+<br />
