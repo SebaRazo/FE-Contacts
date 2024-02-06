@@ -7,16 +7,15 @@
         alt="back"
     /></a>
   </header>
-  <main id="container" class="main">
-    <div *ngIf="contactsData.length > 0" class="blocked-cards-container">
-      <app-blocked-card
-        *ngFor="let contact of contactsData"
-        [contact]="contact"
-        class="blocked-card"
-      />
-    </div>
-    <div *ngIf="contactsData.length == 0" class="no-blocked-contacts">
-      <h2>No tienes contactos bloqueados</h2>
-    </div>
-  </main>
+
+  <div *ngIf="contactsData.length > 0" class="blocked-cards-container">
+    <app-blocked-card
+      *ngFor="let contact of contactsData"
+      [contact]="contact"
+      class="blocked-card"
+    />
+  </div>
+  <div *ngIf="contactsData.length == 0" class="no-blocked-contacts">
+    <h2>No tienes contactos bloqueados</h2>
+  </div>
 </body>

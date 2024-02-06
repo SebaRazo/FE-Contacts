@@ -26,6 +26,9 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: space-evenly;
+  //height: 75vh;
+  max-height: 75vh;
+  overflow-y: auto;
 }
 
 .blocked-card {

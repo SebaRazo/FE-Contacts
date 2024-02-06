@@ -1,6 +1,114 @@
 <div class="signin" id="container">
   <h2 id="registrate">Registrate</h2>
   <form
+    class="form-container"
+    #registerForm="ngForm"
+    (ngSubmit)="registerForm.form.valid && register(registerForm)"
+  >
+    <div class="form-row">
+      <div class="form-group">
+        <label class="label" for="name" autocomplete="name">Nombre</label>
+        <input
+          class="input"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nombre"
+          required
+          [(ngModel)]="user.name"
+          #name="ngModel"
+        /><span class="barra"></span>
+        <p class="error" [class.show]="name.invalid && name.touched">
+          Debes ingresar tu nombre
+        </p>
+      </div>
+      <div class="form-group">
+        <label class="label" for="lastname" autocomplete="lastname"
+          >Apellido</label
+        >
+        <input
+          class="input"
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder="Apellido"
+          [(ngModel)]="user.lastName"
+          #lastName="ngModel"
+          required
+        /><span class="barra"></span>
+        <p class="error" [class.show]="lastName.invalid && lastName.touched">
+          Debes ingresar tu apellido
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="label" for="email" autocomplete="email">Email</label>
+        <input
+          class="input"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Correo electrónico"
+          required
+          [(ngModel)]="user.email"
+          #email="ngModel"
+        /><span class="barra"></span>
+        <p class="error" [class.show]="email.invalid && email.touched">
+          Debes ingresar tu email
+        </p>
+      </div>
+      <div class="form-group">
+        <label class="label" for="username" autocomplete="email"
+          >Nombre de usuario</label
+        >
+        <input
+          class="input"
+          type="text"
+          id="userName"
+          name="userName"
+          placeholder="Usuario"
+          required
+          [(ngModel)]="user.userName"
+          #userName="ngModel"
+        /><span class="barra"></span>
+        <p class="error" [class.show]="userName.invalid && userName.touched">
+          Debes ingresar un nombre de usuario
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="label" for="password" autocomplete="password"
+          >Contraseña</label
+        >
+        <input
+          class="input"
+          type="password"
+          id="password"
+          name="password"
+          placeholder=""
+          required
+          [minlength]="8"
+          [(ngModel)]="user.password"
+          #password="ngModel"
+          [minlength]="8"
+        /><span class="barra"></span>
+        <p class="error" [class.show]="password.invalid && password.touched">
+          La contraseña debe tener un mínimo de 8 caracteres
+        </p>
+      </div>
+    </div>
+
+    <button type="submit" class="button">Registrarse</button>
+  </form>
+</div>
+
+<!--<div class="signin" id="container">
+  <h2 id="registrate">Registrate</h2>
+  <form
     #registerForm="ngForm"
     (ngSubmit)="registerForm.form.valid && register(registerForm)"
   >
@@ -85,4 +193,4 @@
       <button type="submit" class="button">Registrarse</button>
     </p>
   </form>
-</div>
+</div>-->

@@ -18,24 +18,13 @@
       </button>
     </div>
   </header>
-  <main id="container">
-    <div id="contact-container">
-      <app-pop-up
-        *ngFor="let contact of contactsData"
-        [contacto]="contact"
-        (getData)="getData()"
-      ></app-pop-up>
-    </div>
-  </main>
+  <!--<main id="container">-->
+  <div id="contact-container">
+    <app-pop-up
+      *ngFor="let contact of contactsData"
+      [contacto]="contact"
+      (getData)="getData()"
+    ></app-pop-up>
+  </div>
+  <!--</main>-->
 </div>
-<!--<app-contact-card
-        *ngFor="let contact of contactsData"
-        [contact]="contact"
-      ></app-contact-card>-->
-
-<!--<button [routerLink]="''">
-        <div class="button-content">
-          <span>SALIR</span>
-          <img src="./../../../assets/img/home.png" alt="salir" />
-        </div>
-      </button>-->
