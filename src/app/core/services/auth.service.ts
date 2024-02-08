@@ -41,23 +41,6 @@ export class AuthService {
     return true;
   }
 
-  /*async login(authentication: iAuthRequest): Promise<boolean> {
-    const res = await fetch(
-      'https://localhost:7229/api/Authentication/authenticate',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(authentication),
-      }
-    );
-    if (!res.ok) return false;
-    const token = await res.text();
-    console.log(token);
-    if (!token) return false;
-    this.setSession(token);
-    return true;
-  }
-  */
   async addUser(user: IUser): Promise<boolean> {
     const res = await fetch(BACKEND_URL + '/api/User', {
       method: 'POST',

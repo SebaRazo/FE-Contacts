@@ -22,7 +22,6 @@ export class SigninComponent implements OnInit {
   };
 
   async register(registerForm: NgForm) {
-    //completar
     console.log(registerForm.value);
     const res = await this.auth.addUser(registerForm.value);
     if (res) {

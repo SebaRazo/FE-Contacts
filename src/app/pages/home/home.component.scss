@@ -10,7 +10,6 @@
   align-items: center;
   justify-content: center;
   height: 55vh;
-  //background-image: url("../../../assets//img/home-img.png");
 
   background-position: center;
   background-size: 100% 100%;
@@ -39,9 +38,6 @@ button {
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: darken(
-      variables.$color-principal,
-      10%
-    ); // Oscurece el color al pasar el ratón
+    background-color: darken(variables.$color-principal, 10%);
   }
 }

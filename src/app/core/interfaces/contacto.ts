@@ -3,12 +3,8 @@ export interface Contacto {
   name: string;
   description?: string;
   firstName: string;
-  //email: string;
-  //lastName: string;
   telephoneNumber?: number;
   celularNumber?: number;
-  //nombre_usuario?: string;
-  //password?: string;
   user: any;
   userId: number;
   isBlocked: boolean;

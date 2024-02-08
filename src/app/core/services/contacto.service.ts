@@ -56,7 +56,6 @@ export class ContactoService {
     });
     if (!res.ok) return false;
     return true;
-    //return await res.json();
   }
 
   async addContact(
